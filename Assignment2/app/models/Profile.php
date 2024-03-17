@@ -8,7 +8,7 @@ class Profile extends \app\core\Model{
 	public $user_id;//FK
 	public $user_id;
 	public $first_name;
-    public $middle_name
+    public $middle_name;
 	public $last_name;
 
 	//CRUD
