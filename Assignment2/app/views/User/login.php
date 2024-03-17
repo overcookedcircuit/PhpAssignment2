@@ -11,7 +11,6 @@
     <div class='container-sm'>
         <p class="h3">To login to your account, please enter your username and your password</p>
     </div>
-<body>
 	<div class='container'>
 		<form method='post' action=''>
 			<div class="form-group">
