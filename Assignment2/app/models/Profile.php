@@ -14,10 +14,11 @@ class Profile extends \app\core\Model{
 
 	//create
 	public function insert(){
-		$SQL = 'INSERT INTO profile(user_id,first_name,middle_name,last_name) VALUE (:user_id,:first_name,:middle_name,:last_name)';
+		$SQL = 'INSERT INTO profile(profile_id,user_id,first_name,middle_name,last_name) VALUE (:profile_id,:user_id,:first_name,:middle_name,:last_name)';
 		$STMT = self::$_conn->prepare($SQL);
 		$STMT->execute(
-			['user_id'=>$this->user_id,
+			['profile_id'=>$this->profile_id,
+			'user_id'=>$this->user_id,
 			'first_name'=>$this->first_name,
             'middle_name'=>$this->middle_name,
 			'last_name'=>$this->last_name]
