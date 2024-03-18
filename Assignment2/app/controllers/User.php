@@ -57,7 +57,7 @@ class User extends \app\core\Controller{
 			//redirect to a good place
 			header('location:/User/login');
 		}else{
-			$this->view('User/registration');
+			$this->view('User/register');
 		}
 	}
 
