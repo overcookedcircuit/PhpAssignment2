@@ -29,7 +29,7 @@ class Profile extends \app\core\Controller{
 			header('location:/Profile/profileView');
 			
 		}else{
-			$this->view('Profile/profileCreation');
+			$this->view('Profile/profileCreate');
 		}
 	}
 
