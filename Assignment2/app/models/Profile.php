@@ -6,7 +6,6 @@ use PDO;
 class Profile extends \app\core\Model{
 	public $profile_id;//PK
 	public $user_id;//FK
-	public $user_id;
 	public $first_name;
     public $middle_name;
 	public $last_name;

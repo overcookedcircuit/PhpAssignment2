@@ -17,7 +17,7 @@ class User extends \app\core\Controller{
 				//remember that this is the user logging in...
 				$_SESSION['user_id'] = $user->user_id;
 
-				header('location:/User/securePlace');
+				header('location:/Profile/create');
 			}else{
 				header('location:/User/login');
 			}
