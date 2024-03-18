@@ -22,7 +22,7 @@
 
 			<div class="form-group">
 				<input type="submit" name="action" value="Register" /> 
-				<a href='send to login page'>I have an account, bring me to the login page</a>
+				<a href='/User/login'>I have an account, bring me to the login page</a>
 			</div>
 		</form>
 	</div>
