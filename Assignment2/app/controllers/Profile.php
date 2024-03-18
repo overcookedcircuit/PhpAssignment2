@@ -11,7 +11,7 @@ class Profile extends \app\core\Controller{
 		$profile = $profile->getForUser($_SESSION['user_id']);
 
 		//redirect a user that has no profile to the profile creation URL
-		$this->view('Profile/index',$profile);
+		$this->view('Profile/profileView',$profile);
 	}
 
 	public function create(){
@@ -21,13 +21,14 @@ class Profile extends \app\core\Controller{
 			//populate it
 			$profile->user_id = $_SESSION['user_id'];
 			$profile->first_name = $_POST['first_name'];
+			$profile->middle_name = $_POST['middle_name'];
 			$profile->last_name = $_POST['last_name'];
 			//insert it
 			$profile->insert();
 			//redirect
-			header('location:/Profile/index');
+			header('location:/Profile/profileView');
 		}else{
-			$this->view('Profile/create');
+			$this->view('Profile/profileCreation');
 		}
 	}
 
@@ -39,13 +40,14 @@ class Profile extends \app\core\Controller{
 			//make a new profile object
 			//populate it
 			$profile->first_name = $_POST['first_name'];
+			$profile->middle_name = $_POST['middle_name'];
 			$profile->last_name = $_POST['last_name'];
 			//update it
 			$profile->update();
 			//redirect
-			header('location:/Profile/index');
+			header('location:/Profile/profileView');
 		}else{
-			$this->view('Profile/modify', $profile);
+			$this->view('Profile/profileEdit', $profile);
 		}
 	}
 
@@ -62,7 +64,7 @@ class Profile extends \app\core\Controller{
 
 		if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			$profile->delete();
-			header('location:/Profile/index');
+			header('location:/Profile/profileView');
 		}else{
 			$this->view('Profile/delete',$profile);
 		}
