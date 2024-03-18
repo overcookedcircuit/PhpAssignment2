@@ -16,7 +16,10 @@ class User extends \app\core\Controller{
 			if($user && $user->active && password_verify($password, $user->password_hash)){
 				//remember that this is the user logging in...
 				$_SESSION['user_id'] = $user->user_id;
+<<<<<<< HEAD
 
+=======
+>>>>>>> c8bc8b4808a564c9ad618c596d77735458c8d6ee
 				header('location:/Profile/profileView');
 			}else{
 				header('location:/User/login');
