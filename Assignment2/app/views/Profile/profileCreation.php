@@ -14,13 +14,13 @@
 	<div class='container'>
 		<form method='post' action=''>
 			<div class="form-group">
-				<label>Firstname:<input type="text" class="form-control" name="Firstname" placeholder="Jon" /></label>
+				<label>Firstname:<input type="text" class="form-control" name="first_name" placeholder="Jon" /></label>
 			</div>
 			<div class="form-group">
-				<label>Middlename:<input type="text" class="form-control" name="Middlename" placeholder="Middlename" /></label>
+				<label>Middlename:<input type="text" class="form-control" name="middle_name" placeholder="Middlename" /></label>
 			</div>
             <div class="form-group">
-				<label>Lastname:<input type="text" class="form-control" name="Lastname" placeholder="Lastname" /></label>
+				<label>Lastname:<input type="text" class="form-control" name="last_name" placeholder="Lastname" /></label>
 			</div>
             <div class="form-group">
 				<input type="submit" name="action" value="Create your profile"/>
