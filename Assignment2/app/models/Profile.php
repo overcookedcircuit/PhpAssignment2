@@ -78,5 +78,4 @@ class Profile extends \app\core\Model{
 		);
 	}
 
-
 }

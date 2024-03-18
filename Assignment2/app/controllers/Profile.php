@@ -27,6 +27,7 @@ class Profile extends \app\core\Controller{
 			$profile->insert();
 			//redirect
 			header('location:/Profile/profileView');
+			
 		}else{
 			$this->view('Profile/profileCreation');
 		}
