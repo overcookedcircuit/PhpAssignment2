@@ -16,7 +16,7 @@
 		<dt>Last name:</dt>
 		<dd><?= $data->last_name ?></dd>
 		</dl>
-		<a href='/Profile/modify'>Modify my profile</a>
+		<a href='/Profile/profileEdit'>Modify my profile</a>
 	</div>
 </body>
 </html>
