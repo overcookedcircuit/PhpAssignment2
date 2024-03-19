@@ -52,9 +52,9 @@
     <button title="search">🔍</button>
   </div>
   <div class="buttons">
-    <button title="Log in">1️⃣</button>
+	<a href="/User/login" class="btn btn-primary" role="button">1️⃣</a>
     <a href="/Publication/create" class="btn btn-primary" role="button">➕</a>
-    <button title="My Profile">👤</button>
+    <a href="/Profile/profileView" class="btn btn-primary" role="button">👤</a>
   </div>
 </header>
 <body>
