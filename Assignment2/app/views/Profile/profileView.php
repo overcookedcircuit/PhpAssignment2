@@ -53,16 +53,13 @@
   </div>
   <div class="buttons">
     <button title="Log in">1️⃣</button>
-    <button title="New Publication">➕</button>
+    <a href="/Publication/create" class="btn btn-primary" role="button">➕</a>
     <button title="My Profile">👤</button>
   </div>
 </header>
 <body>
-	<div>
-	<h1 class="display-1">Profile</h1>
-	</div>
 <div class='container'>
-		<h1>User profile</h1>
+		<h1 class="display-1">User profile</h1>
 		<dl>
 		<dt>First name:</dt>
 		<dd><?= $data->first_name ?></dd>
@@ -72,12 +69,6 @@
 		<dd><?= $data->last_name ?></dd>
 		</dl>
 		<a href='/Profile/profileEdit'>Modify my profile</a>
-	</div>
-	<div class='container'> 
-		<a href='/Publication/create'>Want to create a post?</a>
-	</div>
-	<div class='container'> 
-		<a href='/Publication/create'>Want to view posts?</a>
 	</div>
 	<div class='container'> 
 		<a href='/User/logout'>Logout</a>

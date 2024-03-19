@@ -59,7 +59,7 @@
   </div>
   <div class="buttons">
     <button title="Log in">1️⃣</button>
-    <button title="New Publication">➕</button>
+    <a href="/Publication/create" class="btn btn-primary" role="button">➕</a>
     <button title="My Profile">👤</button>
   </div>
 </header>
