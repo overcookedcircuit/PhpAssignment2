@@ -1,3 +1,4 @@
+<?php require_once '../layout/header.php'; ?>
 <html>
 <head>
 	<title><?= $name ?> view</title>
@@ -5,6 +6,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
+	<header>
+	</header>
     <div class='container-sm'>
         <p class="h3">Edit your profile here</p>
     </div>
