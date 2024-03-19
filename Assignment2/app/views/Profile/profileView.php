@@ -18,5 +18,9 @@
 		</dl>
 		<a href='/Profile/profileEdit'>Modify my profile</a>
 	</div>
+
+	<div class='container'> 
+		<a href='/User/logout'>Logout</a>
+	</div>
 </body>
 </html>
