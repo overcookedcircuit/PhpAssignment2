@@ -1,4 +1,4 @@
-<?php require_once '../layout/header.php'; ?>
+
 <html>
 <head>
 	<title><?= $name ?> view</title>
