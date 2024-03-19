@@ -11,13 +11,13 @@
 	<div class='container'>
 		<form method='post' action=''>
 			<div class="form-group">
-				<label>Firstname:<input type="text" class="form-control" name="first_name" placeholder="Jon" /></label>
+				<label>Firstname:<input type="text" class="form-control" name="first_name" placeholder="Jon" value=<?= $data->first_name ?> /></label>
 			</div>
 			<div class="form-group">
-				<label>Middlename:<input type="text" class="form-control" name="middle_name" placeholder="Middlename" /></label>
+				<label>Middlename:<input type="text" class="form-control" name="middle_name" placeholder="Middlename" value=<?= $data->middle_name ?> ></label>
 			</div>
             <div class="form-group">
-				<label>Lastname:<input type="text" class="form-control" name="last_name" placeholder="Lastname" /></label>
+				<label>Lastname:<input type="text" class="form-control" name="last_name" placeholder="Lastname" value=<?= $data->last_name ?> /></label>
 			</div>
             <div class="form-group">
 				<input type="submit" name="action" value="Modify"/>
