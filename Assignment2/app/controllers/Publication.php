@@ -26,7 +26,7 @@ class Publication extends \app\core\Controller{
 
     public function main(){
 		$publication = new \app\models\Publication();
-		$publication = $publication->getAll($_SESSION['profile_id']);
+		$publication = $publication->getAllPosts();
 		
         $this->view('Publication/main',$publication);
     }

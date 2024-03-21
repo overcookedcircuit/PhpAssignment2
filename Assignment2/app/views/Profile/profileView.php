@@ -52,7 +52,7 @@
     <button title="search">🔍</button>
   </div>
   <div class="buttons">
-  <a href="/User/login" class="btn btn-primary" role="button" title = "Login/Logout">1️⃣</a>
+  <a href="/User/logout" class="btn btn-primary" role="button" title = "Login/Logout">1️⃣</a>
     <a href="/Publication/create" class="btn btn-primary" role="button" title = "New Publication">➕</a>
     <a href="/Profile/profileView" class="btn btn-primary" role="button" title = "My Profile">👤</a>
   </div>
@@ -68,18 +68,10 @@
 		<dt>Last name:</dt>
 		<dd><?= $data->last_name ?></dd>
 		</dl>
-		<a href='/Profile/profileEdit'>Modify my profile</a>
+		<a href='/Profile/profileEdit'>Modify my profile</a><br>
+    <a href='/Publication/main'>View all posts</a>
 	</div>
 
-  <div class='container'>
-		<h1 class="h3">Publications by User</h1>
-    <?php foreach ($data as $publication) { ?>
-    <div class="publication">
-        <p>Title: <?= $publication->publication_title ?></p>
-        <p>Text: <?= $publication->publication_text ?></p>
-    </div>
-<?php } ?>
-	</div>
 
 </body>
 </html>
