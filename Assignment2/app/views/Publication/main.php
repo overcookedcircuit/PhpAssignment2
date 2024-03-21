@@ -48,7 +48,7 @@
 <header class="header">
   <a href="#" class="logo">
     <img src="logo.png" alt="Logo">
-    Instasham
+    Social Posting
   </a>
   <div class="search-bar">
     <input type="text" placeholder="Search...">

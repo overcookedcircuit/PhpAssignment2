@@ -25,6 +25,8 @@ class Profile extends \app\core\Controller{
 			$profile->last_name = $_POST['last_name'];
 			//insert it
 			$profile->insert();
+
+			$_SESSION['profile_id'] = $profile->profile_id;
 			//redirect
 			header('location:/Profile/profileView');
 			

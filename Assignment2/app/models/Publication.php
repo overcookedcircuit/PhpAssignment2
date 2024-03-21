@@ -2,6 +2,14 @@
     namespace app\models;
 
     class Publication extends \app\core\Model {
+
+        public $publication_id;//PK
+	    public $profile_id;//FK
+	    public $publication_title;
+        public $publication_text;
+	    public $timestamp;
+        public $publication_status;
+
         public function get($publication_id) {
             $SQL = "SELECT * FROM publication WHERE publication_id = :publication_id";
             $STMT = self::$_connection->prepare($SQL);
@@ -37,9 +45,15 @@
             $STMT->execute(["publication_id" => $this->publication_id]);
         }
         public function insert(){
-            $SQL = "INSERT INTO publication (profile_id,picture,publication_text,timestamp) VALUES (:profile_id,:picture,:publication_text,:timestamp)";
-            $STMT = self::$_connection->prepare($SQL);
-            $STMT->execute(["profile_id"=>$this->profile_id, "picture"=>$this->picture,"publication_text"=>$this->publication_text,"timestamp"=>$this->timestamp]);
+            $SQL = 'INSERT INTO publication (profile_id,publication_title,publication_text,timestamp,publication_status) VALUES (:profile_id,:publication_title,:publication_text,:timestamp,:publication_status)';
+            $STMT = self::$_conn->prepare($SQL);
+            $STMT->execute([
+                'profile_id'=>$this->profile_id, 
+                'publication_title'=>$this->publication_title,
+                'publication_text'=>$this->publication_text,
+                'timestamp'=>$this->timestamp,
+                'publication_status'=>$this->publication_status]
+            );
         }
         public function updateCaption() {
             $SQL = "UPDATE publication SET publication_text=:publication_text WHERE publication_id=:publication_id";

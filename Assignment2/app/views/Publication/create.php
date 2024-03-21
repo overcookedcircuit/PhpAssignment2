@@ -51,7 +51,7 @@
 <header class="header">
   <a href="#" class="logo">
     <img src="logo.png" alt="Logo">
-    Instasham
+    Social Posting
   </a>
   <div class="search-bar">
     <input type="text" placeholder="Search...">
@@ -68,14 +68,30 @@
     <p class="h3">New Publication</p>
 </div>
 
-<div class="form-group">
-	<label>Publication:<textarea type="text" class="form-control" name="text" placeholder="Write your message"> </textarea></label>
-</div>
+<form method='post' action=''>
 
-<div class="form-group">
-	<input type="submit" name="action" value="Publish"/>
-	<a href='/Publication/main'>Cancel</a>
-</div>
+  <div class="container-sm">
+	  <label>Publication:<textarea type="text" class="form-control" name="publication_text" placeholder="Write your message"> </textarea></label>
+  </div>
+
+  <div class="container-sm">
+	  <label>Title: <input type="text" class="form-control" name="publication_title" placeholder="Write your title"></label>
+  </div>
+
+  <div class="container-sm">
+	  <label>
+      Status: <br>
+      </label> <br>
+        Public<input type="radio" class="form-control" name="publication_status" value="Public">
+        Private<input type="radio" class="form-control" name="publication_status" value="Private">
+    </label>
+  </div>
+
+  <div class="container-sm">
+	  <input type="submit" name="action" value="Publish"/>
+	  <a href='/Publication/main'>Cancel</a>
+  </div>
+</form>
 
 </body>
 </html>
