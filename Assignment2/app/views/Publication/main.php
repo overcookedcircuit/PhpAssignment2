@@ -60,8 +60,15 @@
     <a href="/Profile/profileView" class="btn btn-primary" role="button" title = "My Profile">👤</a>
   </div>
 </header>
-
-
+<div class="container">
+    <h1 class="h3">Publications by User</h1>
+    <?php foreach ($data as $publication) { ?>
+    <div class="publication">
+        <p>Title: <?= $publication->publication_title ?></p>
+        <p>Text: <?= $publication->publication_text ?></p>
+    </div>
+<?php } ?>
+</div>
 
 </body>
 </html>

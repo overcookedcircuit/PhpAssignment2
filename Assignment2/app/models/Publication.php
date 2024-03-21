@@ -25,15 +25,15 @@
         }
         public function getAll($profile_id) {
             $SQL = "SELECT * FROM publication WHERE profile_id = :profile_id";
-            $STMT = self::$_connection->prepare($SQL);
+            $STMT = self::$_conn->prepare($SQL);
             $STMT->execute(['profile_id'=>$profile_id]);
             $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\models\Publication');
             return $STMT->fetchAll();
         }
         public function getAllPosts() {
-            $SQL = "SELECT * FROM publication
-                    ORDER BY timestamp DESC";
-            $STMT = self::$_connection->prepare($SQL);
+            $SQL = 'SELECT * FROM publication
+                    ORDER BY timestamp DESC';
+            $STMT = self::$_conn->prepare($SQL);
             $STMT->execute();
             $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\models\Publication');
             return $STMT->fetchAll();

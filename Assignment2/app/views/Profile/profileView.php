@@ -73,7 +73,14 @@
 
   <div class='container'>
 		<h1 class="h3">Publications by User</h1>
-		
+    <?php var_dump($data); ?>
+    <?php foreach ($data as $publication): ?>
+    <div class="container">
+        <h1 class="h3">Publication</h1>
+        <p>Title: <?= $publication['publication_title'] ?></p>
+        <p>Text: <?= $publication['publication_text'] ?></p>
+    </div>
+<?php endforeach; ?>
     
 	</div>
 
