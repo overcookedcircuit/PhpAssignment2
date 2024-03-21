@@ -46,8 +46,7 @@
 <body>
 
 <header class="header">
-  <a href="#" class="logo">
-    <img src="logo.png" alt="Logo">
+<a href="/Publication/main" class="logo">
     Social Posting
   </a>
   <div class="search-bar">
@@ -61,7 +60,7 @@
   </div>
 </header>
 <div class="container">
-    <h1 class="h3">Publications by User</h1>
+    <h1 class="h3">Publications</h1>
     <?php foreach ($data as $publication) { ?>
     <div class="publication">
         <p>Title: <?= $publication->publication_title ?></p>

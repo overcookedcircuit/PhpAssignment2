@@ -49,8 +49,7 @@
 <body>
 
 <header class="header">
-  <a href="#" class="logo">
-    <img src="logo.png" alt="Logo">
+  <a href="/Publication/main" class="logo">
     Social Posting
   </a>
   <div class="search-bar">
