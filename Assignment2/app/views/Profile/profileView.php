@@ -71,6 +71,11 @@
 		<a href='/Profile/profileEdit'>Modify my profile</a>
 	</div>
 
-  
+  <div class='container'>
+		<h1 class="h3">Publications by User</h1>
+		
+    
+	</div>
+
 </body>
 </html>
