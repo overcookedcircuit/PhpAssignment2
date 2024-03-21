@@ -70,4 +70,11 @@ class Profile extends \app\core\Controller{
 			$this->view('Profile/delete',$profile);
 		}
 	}
+
+	public function profileView() {
+		// Assuming $publications contains publication data
+		$publication = $this->publication->getAll(); // Get all publications
+		$this->view('Profile/profileView', $publication); // Pass publications to the view
+	}
+	
 }

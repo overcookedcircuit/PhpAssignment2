@@ -70,7 +70,15 @@
 		<a href='/Profile/profileEdit'>Modify my profile</a><br>
     <a href='/Publication/main'>View all posts</a>
 	</div>
-
+  <div class="container">
+    <h1 class="h3">Publications</h1>
+    <?php foreach ($data as $publication) { ?>
+        <div class="publication">
+            <p>Title: <?= $publication->publication_title ?></p>
+            <p>Text: <?= $publication->publication_text ?></p>
+        </div>
+    <?php } ?>
+</div>
 
 </body>
 </html>
