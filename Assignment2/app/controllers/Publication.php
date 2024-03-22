@@ -24,15 +24,24 @@ class Publication extends \app\core\Controller{
 		}
     }
 
-	public function edit($id){
+	public function edit(){
 		if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
 			$publication = new \app\models\Publication();
 			$publication->publication_title = $_POST['publication_title'];
 			$publication->publication_text = $_POST['publication_text'];
 			$publication->publication_status = $_POST['publication_status'];
 			$publication->update();
+			header('location:/Publication/seeUserPost');
 	}
 }
+	public function delete(){
+		if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
+			$publication = new \app\models\Publication();
+			$publication->remove();
+			header('location:/Publication/delete');
+			$this->view('Publication/seeUserPost');
+		}
+	}
 
     public function main(){
 		$publication = new \app\models\Publication();

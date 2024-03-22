@@ -66,8 +66,14 @@ $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
         <h1>Title: <?= $publication->publication_title ?></h1>
         <p>Text: <?= $publication->publication_text ?></p>
 
-        <a href='/Publication/profileEdit'>Modify my post</a><br>
-        <a href='/Publication/profileDelete'>Delete my post</a><br>
+        <a href='/Publication/edit'>Modify my post</a><br>
+        <div class='container'>
+        <form method='post' action='/Publication/delete'>
+                <div class="form-group">
+            <input type="submit" name="action" value="Delete Post"/>
+          </div>
+        </form>
+      </div>
         <p>========================================================</p>
     </div>
 <?php } ?>
