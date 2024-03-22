@@ -1,3 +1,6 @@
+<?php
+$searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,13 +49,14 @@
 <body>
 
 <header class="header">
-<a href="/Publication/main" class="logo">
+  <a href="#" class="logo">
+    <img src="logo.png" alt="Logo">
     Social Posting
   </a>
-  <div class="search-bar">
-    <input type="text" placeholder="Search...">
+  <form method="post" action="/search">
+    <input type="text" name="search" placeholder="Search..." value="<?= $searchTerm ?>">
     <button title="search">🔍</button>
-  </div>
+</form>
   <div class="buttons">
     <a href="/User/login" class="btn btn-primary" role="button" title = "Log In">1️⃣</a>
     <a href="/Publication/create" class="btn btn-primary" role="button" title = "New Publication">➕</a>
@@ -61,10 +65,16 @@
 </header>
 <div class="container">
     <h1 class="h3">Publications</h1>
+    <p>========================================================</p>
     <?php foreach ($data as $publication) { ?>
     <div class="publication">
-        <p>Title: <?= $publication->publication_title ?></p>
-        <p>Text: <?= $publication->publication_text ?></p>
+    <h1> Title : 
+        <a href="/publication/details/<?= urlencode($publication->publication_id) ?>">
+            <?= htmlspecialchars($publication->publication_title) ?>
+        </a>
+    </h1>
+        <h3>Text: <?= $publication->publication_text ?></h3>
+        <p>========================================================</p>
     </div>
 <?php } ?>
 </div>

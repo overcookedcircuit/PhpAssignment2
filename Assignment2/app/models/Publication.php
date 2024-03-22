@@ -17,12 +17,7 @@
             $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\models\Publication');
             return $STMT->fetch();
         }
-        public function getProfileId() {
-            $SQL = "SELECT profile_id FROM publication WHERE publication_id = :publication_id";
-            $STMT = self::$_connection->prepare($SQL);
-            $STMT->execute(['publication_id'=>$this->publication_id]);
-            return $STMT->fetch();
-        }
+
         public function getAll($profile_id) {
             $SQL = "SELECT * FROM publication WHERE profile_id = :profile_id";
             $STMT = self::$_conn->prepare($SQL);
@@ -32,6 +27,7 @@
         }
         public function getAllPosts() {
             $SQL = 'SELECT * FROM publication
+                    WHERE publication_status = "public"
                     ORDER BY timestamp DESC';
             $STMT = self::$_conn->prepare($SQL);
             $STMT->execute();
@@ -55,14 +51,19 @@
                 'publication_status'=>$this->publication_status]
             );
         }
-        public function updateCaption() {
-            $SQL = "UPDATE publication SET publication_text=:publication_text WHERE publication_id=:publication_id";
+        public function update() {
+            $SQL = "UPDATE publication SET publication_title=:publication_title, publication_text = :publication_text, publication_status = :status WHERE publication_id=:publication_id";
             $STMT = self::$_connection->prepare($SQL);
-            $STMT->execute(['publication_text'=>$this->publication_text,'publication_id'=>$this->publication_id]);
+            $STMT->execute(
+                ['publication_id'=>$this->publication_id,
+                'publication_title'=>$this->publication_title,
+                'publication_text'=>$this->publication_text,
+                'publication_status'=>$this->publication_status]
+            );
         }
 
         public function getPubByKeyword($keyword){
-            $SQL = "SELECT * FROM publication WHERE publication_text like :keyword";
+            $SQL = "SELECT * FROM publication WHERE publication_status = 'public' AND (publication_title LIKE :search_term OR publication_text LIKE :search_term) ORDER BY timestamp DESC";
             $STMT = self::$_connection->prepare($SQL);
             $STMT->execute(["keyword"=>'%'.$keyword.'%']);
             $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\models\Publication');

@@ -71,10 +71,11 @@ class Profile extends \app\core\Controller{
 		}
 	}
 
-	public function profileView() {
-		// Assuming $publications contains publication data
-		$publication = $this->publication->getAll(); // Get all publications
-		$this->view('Profile/profileView', $publication); // Pass publications to the view
+	public function seeUserPost($profile_id){
+		$profile = new \app\models\profile();
+		$profileName = $profile->getProfileName($profile_id);
+
+		$this->view('Publication/main', ['profileName' => $profileName]);
 	}
 	
 }

@@ -1,4 +1,3 @@
-
 <?php
 $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
 ?>
@@ -59,21 +58,20 @@ $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
     <a href="/Profile/profileView" class="btn btn-primary" role="button" title = "My Profile">👤</a>
   </div>
 </header>
-<body>
-<div class='container'>
-		<h1 class="display-1">User profile</h1>
-		<dl>
-		<dt>First name:</dt>
-		<dd><?= $data->first_name ?></dd>
-		<dt>Middle name:</dt>
-		<dd><?= $data->middle_name ?></dd>
-		<dt>Last name:</dt>
-		<dd><?= $data->last_name ?></dd>
-		</dl>
-		<a href='/Profile/profileEdit'>Modify my profile</a><br>
-    <a href='/Publication/seeUserPost/<?php echo $data->profile_id; ?>'>View all posts from the user</a>
-	</div>
-  
+<div class="container">
+    <h1 class="h3">User's Publications</h1>
+    <p>========================================================</p>
+    <?php foreach ($data as $publication) { ?>
+    <div class="publication">
+        <h1>Title: <?= $publication->publication_title ?></h1>
+        <p>Text: <?= $publication->publication_text ?></p>
+
+        <a href='/Publication/profileEdit'>Modify my post</a><br>
+        <a href='/Publication/profileDelete'>Delete my post</a><br>
+        <p>========================================================</p>
+    </div>
+<?php } ?>
+</div>
 
 </body>
 </html>

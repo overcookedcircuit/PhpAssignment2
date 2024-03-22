@@ -1,3 +1,6 @@
+<?php
+$searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +55,10 @@
   <a href="/Publication/main" class="logo">
     Social Posting
   </a>
-  <div class="search-bar">
-    <input type="text" placeholder="Search...">
+  <form method="post" action="/search">
+    <input type="text" name="search" placeholder="Search..." value="<?= $searchTerm ?>">
     <button title="search">🔍</button>
-  </div>
+</form>
   <div class="buttons">
   <a href="/User/login" class="btn btn-primary" role="button" title = "Log In">1️⃣</a>
     <a href="/Publication/create" class="btn btn-primary" role="button" title = "New Publication">➕</a>

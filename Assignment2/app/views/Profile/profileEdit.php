@@ -1,4 +1,6 @@
-
+<?php
+$searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
+?>
 <html>
 <head>
 	<title><?= $name ?> view</title>

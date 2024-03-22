@@ -1,10 +1,18 @@
 <?php
 namespace app\core;
 
-//Controller superclass from which all controller classes should inherit
-class Controller{
-	function view($name, $data=null){
-		//load the view files to present them to the Web user
-		include('app/views/' . $name . '.php');
-	}
+
+class Controller {
+    function view($name, $data = null) {
+       
+        if (is_array($data) && !array_is_list($data)) {
+            extract($data);
+        }
+        include('app/views/' . $name . '.php');
+    }
+
+    public function redirect($url) {
+        header("Location: $url");
+        exit;
+    }
 }
