@@ -12,7 +12,7 @@
 
         public function get($publication_id) {
             $SQL = "SELECT * FROM publication WHERE publication_id = :publication_id";
-            $STMT = self::$_connection->prepare($SQL);
+            $STMT = self::$_conn->prepare($SQL);
             $STMT->execute(['publication_id'=>$publication_id]);
             $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\models\Publication');
             return $STMT->fetch();
@@ -37,7 +37,7 @@
         public function remove() 
         {
             $SQL = "DELETE FROM publication WHERE publication_id = :publication_id";
-            $STMT = self::$_connection->prepare($SQL);
+            $STMT = self::$_conn->prepare($SQL);
             $STMT->execute(["publication_id" => $this->publication_id]);
         }
         public function insert(){
@@ -53,7 +53,7 @@
         }
         public function update() {
             $SQL = "UPDATE publication SET publication_title=:publication_title, publication_text = :publication_text, publication_status = :status WHERE publication_id=:publication_id";
-            $STMT = self::$_connection->prepare($SQL);
+            $STMT = self::$_conn->prepare($SQL);
             $STMT->execute(
                 ['publication_id'=>$this->publication_id,
                 'publication_title'=>$this->publication_title,
@@ -64,7 +64,7 @@
 
         public function getPubByKeyword($keyword){
             $SQL = "SELECT * FROM publication WHERE publication_status = 'public' AND (publication_title LIKE :search_term OR publication_text LIKE :search_term) ORDER BY timestamp DESC";
-            $STMT = self::$_connection->prepare($SQL);
+            $STMT = self::$_conn->prepare($SQL);
             $STMT->execute(["keyword"=>'%'.$keyword.'%']);
             $STMT->setFetchMode(\PDO::FETCH_CLASS,'app\models\Publication');
             return $STMT->fetchAll();

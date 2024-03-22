@@ -34,12 +34,13 @@ class Publication extends \app\core\Controller{
 			header('location:/Publication/seeUserPost');
 	}
 }
-	public function delete(){
+	public function delete($id){
 		if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
 			$publication = new \app\models\Publication();
+			$publication = $publication->get($id);
 			$publication->remove();
-			header('location:/Publication/delete');
-			$this->view('Publication/seeUserPost');
+			header('location:/Publication/seeUserPost/' . $publication->profile_id);
+			
 		}
 	}
 
